@@ -1,5 +1,5 @@
 import './App.css';
-import {useRef, useState} from "react";
+import {forwardRef, useRef, useState} from "react";
 import React from "react";
 import AboutMe from "./Components/AboutMe";
 import InvoiceMain from './Images/InvoiceMain.jpg'
@@ -10,6 +10,8 @@ import CrowdiesSecondary from './Images/CrowdiesSecondary.jpg'
 import CrowdiesTertiary from './Images/CrowdiesTertiary.jpg'
 import LLVideo from './Images/LUCASLICHNERSEITE.mov'
 import IEVideo from './Images/IMAGEEDITOR.mp4'
+import ImageContent from './Components/ImageContent';
+import VideoContent from './Components/VideoContent';
 
 function App() {
 
@@ -34,21 +36,23 @@ function App() {
     ) 
 
     const myRef = useRef(null)
-
+    
     function executeScroll(){
-        myRef.current.scrollIntoView({behavior: "smooth"})    
+        setTimeout(() => {
+        myRef.current.scrollIntoView({behavior: "smooth"})   
+    }, 500) 
     }
             return (
                             <div className="marginContainer">
                 
-                                <a class="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-      <a class="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+      <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                             <DividerLine color={color}/>
-                                <p style={{fontSize: '800%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
+                                <p style={{fontSize: '600%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
                                                   <DividerLine color={color}/>
                             <AboutMe />
                             <DividerLine color={color}/>
-                                <p>Topics</p>
+                
                                 <div className="centerClass sideScroll">
                                     
                             {balls}
@@ -61,47 +65,32 @@ function App() {
                             {projects.length !== 0 && 
                             <DividerLine color={color}/>
                             }  
+
                             {selectedProject === 'Kinvoize' &&
-                                <div ref={myRef} className="marginContainer">
-                                    <p>UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution. </p>
-                                    <img src={InvoiceMain} alt='huh'/>
-                                    <img src={InvoiceSecondary} alt='huh'/>
-                                    <img src={InvoiceTertiary} alt='huh'/>
+                            <div ref={myRef}>
+                            <ImageContent text={'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.'} images={[InvoiceMain, InvoiceSecondary, InvoiceTertiary]}/>                       
                                 </div>
-                                
                                 }
                             {selectedProject === 'Crowdies' &&
-                                <div className="marginContainer middleContainer">
-                                    <p>UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns. </p>
-                                    <img ref={myRef}  src={CrowdiesMain} alt='huh'/>
-                                    <img src={CrowdiesSecondary} alt='huh'/>
-                                    <img src={CrowdiesTertiary} alt='huh'/>
-                                </div>
+                                      <div ref={myRef}>
+                            <ImageContent text={'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns. '} images={[CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}/>
+                            </div>
                                 }
                             {selectedProject === 'lucaslichner.de' &&
-                                <div className="marginContainer">
-                                    <a className='hoverPar' href = "https://lucaslichner.de/" target="_blank2">OLD PORTFOLIO PAGE</a>
-                                    <video ref={myRef} autoplay='autoplay' name="Video Name">
-                                    <source src={LLVideo}/>
-                                    </video>
-                                </div>
+                                       <div ref={myRef}>
+                             <VideoContent link= "https://lucaslichner.de/" title='lucaslichner.de' video={LLVideo}/>
+                             </div>
                                 }
-                                        {selectedProject ===  'Image Editor' &&
-                                <div className="marginContainer">
-                                    <a className='hoverPar' href = "https://lucaslichner-image-editor.netlify.app/" target="_blank3">IMAGE EDITOR</a>
-                                    <video ref={myRef} autoplay='autoplay' name="Video Name">
-                                    <source src={IEVideo}/>
-                                    </video>
-                                </div>
+                            {selectedProject ===  'Image Editor' &&
+                                      <div ref={myRef}>
+                             <VideoContent link= 'https://lucaslichner-image-editor.netlify.app/' title='Image Editor' video={IEVideo}/>
+                             </div>
                                 }
 
                             {selectedProject === 'Mock webshop' &&
-                                <div className="marginContainer">
-                                    <a className='hoverPar' href = "https://lucaslichner-web2022.netlify.app/" target="_blank2">MOCK WEBSHOP</a>
-                                    <video ref={myRef} autoplay='autoplay' name="Video Name">
-                                    <source src={LLVideo}/>
-                                    </video>
-                                </div>
+                                        <div ref={myRef}>
+                            <VideoContent link= 'https://lucaslichner-web2022.netlify.app/' title='Mock Webshop'  video={LLVideo}/>
+                            </div>
                                 }
                             <ScrollToTop/>
                             <Footer/>
@@ -109,10 +98,6 @@ function App() {
             )
 }
 
-function Content(){
-
-
-}
 
 function DividerLine(props){
     return(
@@ -124,7 +109,7 @@ function ScrollToTop(){
     const aboutMe = document.getElementById('aboutMe');
     
     return(
-        <div onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </div>
+        <div className="hoverPar"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </div>
     )
 }
 
@@ -188,6 +173,7 @@ function SelectBall(props){
 function SelectOblate(props){
     let styles;
     let styles2;
+
     if(props.selectedProject === props.project){
         styles = 'selectBall blur centerClass'
        styles2={

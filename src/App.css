@@ -31,12 +31,11 @@
 .selectBall{
   width: 200px;
   height: 200px;
-  min-width: 200px;
+  min-width: 100px;
   min-height: 200px;
+  max-width: 200px;
   border-radius: 100px;
   overflow: visible;
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;  
 }
 
@@ -110,6 +109,8 @@ video{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: visible;
+  width: 100vw;
 
 }
 
@@ -119,6 +120,7 @@ video{
   width: 100vw;
   display: flex;
   flex-direction: row;
+  overflow-y: scroll;
   
 }
 
