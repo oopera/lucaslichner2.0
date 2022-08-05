@@ -12,20 +12,30 @@ import LLVideo from './Images/LUCASLICHNERSEITE.mov'
 import IEVideo from './Images/IMAGEEDITOR.mp4'
 import ImageContent from './Components/ImageContent';
 import VideoContent from './Components/VideoContent';
+import Footer from './Components/Footer';
 
 function App() {
 
-    const Frontend = {topic: 'FRONTEND', color:'black', projects: ['lucaslichner.de', 'Mock webshop', 'Image Editor'], color:'#F3Fe39'};
+    const Frontend = {topic: 'FRONTEND', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
     const UI = {topic: 'UI', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
     const Illustration = {topic: 'ILLUSTRATIONS', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
     const Graphics = {topic: 'GRAPHICS', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
 
-    const [topics, setTopics] = useState([Frontend, UI, Illustration, Graphics]);
+    const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
+    const Crowdies = {type: 'images',name: 'Crowdies', text: 'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns.', images: [CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}
+    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de - My first own Website. Retired due to it being hard to maintain, bad modularity, and no way to display UI work well.', link: 'https://lucaslichner.de/', video: LLVideo}
+    const ImageEditor = {type: 'videos', name: 'ImageEditor', text: 'Image Editor - A lightweight Image Editor with off-the-wall styling', link: 'https://lucaslichner-image-editor.netlify.app/', video: IEVideo}
+    const MockWebshop = {type: 'videos', name: 'MockWebshop', text: 'Mock Webshop - built in React with fully functioning Product and User Management', link: 'https://lucaslichner-web2022.netlify.app/', video: LLVideo}
+    
+    
+    const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop]
+    const topics  = [Frontend, UI, Illustration, Graphics];
     const [selectedTopic, setSelectedTopic] = useState([])
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState([]);
     const [color, setColor] = useState('#000000')
 
+    const myRef = useRef(null)
 
     const balls =  topics.map((topic) => 
         <SelectBall setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
@@ -34,8 +44,23 @@ function App() {
     const oblates =  projects.map((project) => 
     <SelectOblate   selectedProject={selectedProject} executeScroll={executeScroll} setSelectedProject={setSelectedProject} project={project} />
     ) 
+   
 
-    const myRef = useRef(null)
+
+    
+    const selProj = allProjects.map((project) => {
+    if(project.type === 'images' && project.name === selectedProject){
+    return <div ref={myRef}>
+    <ImageContent text={project.text} images={project.images}/>
+    </div>
+    }else if(project.type === 'videos' && project.name === selectedProject){
+    return    <div ref={myRef}>
+    <VideoContent link= {project.link} title={project.text} video={project.video}/>
+    </div>  
+    }})
+    
+
+    console.log(selProj)
     
     function executeScroll(){
         setTimeout(() => {
@@ -46,52 +71,26 @@ function App() {
                             <div className="marginContainer">
                 
                                 <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-      <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                            
                             <DividerLine color={color}/>
                                 <p style={{fontSize: '600%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
                                                   <DividerLine color={color}/>
-                            <AboutMe />
+                            <AboutMe
+                            />
                             <DividerLine color={color}/>
-                
                                 <div className="centerClass sideScroll">
-                                    
-                            {balls}
+                                    {balls}
                                 </div>
                             <DividerLine color={color}/>
-                                    <p>{selectedTopic}</p>
-                                <div className="centerClass sideScroll">
-                            {oblates }
-                            </div>
+                                <p>{selectedTopic}</p>
+                                    <div className="centerClass sideScroll">
+                                        {oblates }
+                                    </div>
                             {projects.length !== 0 && 
                             <DividerLine color={color}/>
                             }  
-
-                            {selectedProject === 'Kinvoize' &&
-                            <div ref={myRef}>
-                            <ImageContent text={'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.'} images={[InvoiceMain, InvoiceSecondary, InvoiceTertiary]}/>                       
-                                </div>
-                                }
-                            {selectedProject === 'Crowdies' &&
-                                      <div ref={myRef}>
-                            <ImageContent text={'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns. '} images={[CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}/>
-                            </div>
-                                }
-                            {selectedProject === 'lucaslichner.de' &&
-                                       <div ref={myRef}>
-                             <VideoContent link= "https://lucaslichner.de/" title='lucaslichner.de' video={LLVideo}/>
-                             </div>
-                                }
-                            {selectedProject ===  'Image Editor' &&
-                                      <div ref={myRef}>
-                             <VideoContent link= 'https://lucaslichner-image-editor.netlify.app/' title='Image Editor' video={IEVideo}/>
-                             </div>
-                                }
-
-                            {selectedProject === 'Mock webshop' &&
-                                        <div ref={myRef}>
-                            <VideoContent link= 'https://lucaslichner-web2022.netlify.app/' title='Mock Webshop'  video={LLVideo}/>
-                            </div>
-                                }
+                            {selProj}
                             <ScrollToTop/>
                             <Footer/>
                             </div>
@@ -113,27 +112,7 @@ function ScrollToTop(){
     )
 }
 
-function Footer(){
 
-    return(
-        <>
-        <table className="footer">
-        <tr>
-            <td>Brought to you by Lucas Lichner 2022</td>
-        </tr>
-        <tr>
-            <td>Made in React {'<3'} </td>
-        </tr>
-        <tr>
-            <td>You can reach me here: ll@lucaslichner.de</td>
-        </tr>
-        </table>
-    </>
-
-    )
-
-
-}
 
 
 function SelectBall(props){
@@ -142,7 +121,7 @@ function SelectBall(props){
     if(props.selectedTopic === props.topic.topic){
          styles = 'selectBall blur centerClass'
         styles2={
-            color:'#000000',
+            opacity:'0',
 
         }
         }else{

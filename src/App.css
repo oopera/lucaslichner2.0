@@ -116,11 +116,11 @@ video{
 
 .sideScroll{
   overflow-x: visible;
-  overflow-y: scroll;
-  width: 100vw;
+  margin-left: 10vw;
+  width: 80vw;
   display: flex;
   flex-direction: row;
-  overflow-y: scroll;
+
   
 }
 
