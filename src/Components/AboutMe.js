@@ -28,28 +28,28 @@ export default function AboutMe(props){
         </table>
         )}
                 {active === 'web' && (
-        <table>
-            <tr>
-                <th>I do:</th>
-                <th>I know:</th>
-            </tr>
-            <tr>
-                <td onClick={() => setActive(true)}>Web Development</td>
-                <td>HTML CSS JS PHP SQL</td>
-            </tr>
-            <tr onClick={() => setActive('ux')}>
-                <td>UI&UX Design</td>
-                <td>MongoDB Express React.js Node.js</td>
-            </tr>
-            <tr>
-                <td>Illustrations</td>
-                <td>Tailwind SCSS</td>
-            </tr>
-            <tr>
-                <td>Graphics</td>
-                <td>A tiny bit of WebGL</td>
-            </tr>
-        </table>
+                    <table>
+                        <tr>
+                            <th>I do:</th>
+                            <th>I know:</th>
+                        </tr>
+                        <tr>
+                            <td onClick={() => setActive(true)}>Web Development</td>
+                            <td>HTML CSS JS PHP SQL</td>
+                        </tr>
+                        <tr>
+                            <td onClick={() => setActive('ux')}>UI&UX Design</td>
+                            <td>MongoDB Express React.js Node.js</td>
+                        </tr>
+                        <tr>
+                            <td>Illustrations</td>
+                            <td>Tailwind SCSS</td>
+                        </tr>
+                        <tr>
+                            <td>Graphics</td>
+                            <td>A tiny bit of WebGL</td>
+                        </tr>
+                    </table>
         )}
                {active === 'ux' && (
                        <table>
