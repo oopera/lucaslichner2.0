@@ -81,7 +81,7 @@ export default function AboutMe(props){
                 <p onClick={() => setHyperActive(!hyperActive)} className="hoverPar"> Want to know more?</p>
                )}
                      {hyperActive !== false && (
-                     
+               
                      <table>
                      <tr>
                          <th>I am:</th>
@@ -90,7 +90,7 @@ export default function AboutMe(props){
                          <td className="hoverTable">23 Years old</td>
                      </tr>
                      <tr>
-                         <td className="hoverTable">Currently studying Human Computer Interaction @ HRW Bottrop</td>
+                         <td className="hoverTable">Currently doing my b.sc. in Human Computer Interaction @ HRW Bottrop</td>
                      </tr>
                      <tr>
                          <td className="hoverTable">Currently working as a Shopify backend Developer</td>
@@ -99,7 +99,12 @@ export default function AboutMe(props){
                          <td className="hoverTable">Pretty rad. </td>
                      </tr>
                  </table>
+           
                      )}
+                    {hyperActive !== false && (
+                        <a className="hoverPar margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
+        
+                        )}
         </>
     )
 }

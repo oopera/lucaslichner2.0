@@ -11,8 +11,7 @@ import CrowdiesTertiary from './Images/UI/CrowdiesTertiary.jpg'
 import LLVideo from './Videos/LUCASLICHNERSEITE.mp4'
 import IEVideo from './Videos/IMAGEEDITOR.mp4'
 import MOCKVIDEO from './Videos/MOCKWEBSHOP.mp4'
-import ImageContent from './Components/ImageContent';
-import VideoContent from './Components/VideoContent';
+import {ImageContent, VideoContent} from './Components/Content';
 import Footer from './Components/Footer';
 import SmallLotusBouquet from './Images/Covers/SmallLotusBouquet.jpg'
 import SMALLLOTUSBOUQUET from './Videos/SMALLLOTUSBOUQUET.mp4'
@@ -84,7 +83,7 @@ function App() {
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                             <DividerLine/>
                                 <p style={{fontSize: '600%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
-                            <DividerLine  />
+                            <DividerLine/>
                             <AboutMe
                             />
                             <DividerLine/>
