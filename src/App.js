@@ -30,7 +30,7 @@ function App() {
 
     const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
     const Crowdies = {type: 'images',name: 'Crowdies', text: 'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns.', images: [CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}
-    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de - My first own Website. Retired due to it being hard to maintain, bad modularity, and no way to display UI work well.', link: 'https://lucaslichner.de/', video: LLVideo}
+    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de 1.0 - My first own Website. Retired due to it being hard to maintain, bad modularity, and no way to display UI work well.', link: 'https://lucaslichnertwopointo.netlify.app/', video: LLVideo}
     const ImageEditor = {type: 'videos', name: 'ImageEditor', text: 'Image Editor - A lightweight Image Editor with off-the-wall styling', link: 'https://lucaslichner-image-editor.netlify.app/', video: IEVideo}
     const MockWebshop = {type: 'videos', name: 'MockWebshop', text: 'Mock Webshop - built in React with fully functioning Product and User Management', link: 'https://lucaslichner-web2022.netlify.app/', video: MOCKVIDEO}
     const Covers = {type: 'mixed', name: 'Covers', text: 'A cover, Vinyl Design and Animation for a Song i made in 2021.', images: [SmallLotusBouquet], video: [SMALLLOTUSBOUQUET]}
