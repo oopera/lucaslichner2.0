@@ -5,8 +5,8 @@ export default function ImageContent(props){
     )
 
     return(
-    <div ref={props.myRef} className="marginContainer middleContainer">
-    <p>{props.text}</p>
+    <div ref={props.myRef} className="marginContainer">
+    <p className='sticky'>{props.text}</p>
         {images}
     </div>
     )

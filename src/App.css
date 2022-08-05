@@ -17,6 +17,7 @@
   width: 90vw;
   height: 1px;
   margin-left: 5vw;
+  background-color: black;
 }
 
 #root{
@@ -42,7 +43,7 @@
 .selectOblate{
   width: 200px;
   height: 50px;
-  background-color: black;
+  border: 1pt solid black;
   border-radius: 100px;
 }
 .selectBall:hover{
@@ -50,7 +51,11 @@
   filter: blur(1.5rem);
   overflow: visible;
 }
-
+.sticky{
+  osition: -webkit-sticky;
+  position: sticky;
+  left: 0;
+}
 .selectors:hover{
   filter: blur(0.5rem);
 }
@@ -90,18 +95,16 @@ video{
   
 }
 
-img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 25px;
+.marginContainer{
+  height: 100%;
 }
 
-video{
+img, video{
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 25px;
+  width: 70%;
 }
 
 

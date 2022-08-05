@@ -43,7 +43,6 @@ function App() {
     const [selectedTopic, setSelectedTopic] = useState([])
     const [projects, setProjects] = useState([]);
     const [selectedProject, setSelectedProject] = useState([]);
-    const [color, setColor] = useState('#000000')
 
     const myRef = useRef(null)
 
@@ -83,22 +82,22 @@ function App() {
                             <div className="marginContainer">
                                 <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
-                            <DividerLine color={color}/>
+                            <DividerLine/>
                                 <p style={{fontSize: '600%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
-                            <DividerLine color={color}/>
+                            <DividerLine  />
                             <AboutMe
                             />
-                            <DividerLine color={color}/>
+                            <DividerLine/>
                                 <div className="centerClass sideScroll">
                                     {balls}
                                 </div>
-                            <DividerLine color={color}/>
+                            <DividerLine/>
                                 <p>{selectedTopic}</p>
                                     <div className="centerClass sideScroll">
                                         {oblates }
                                     </div>
                             {projects.length !== 0 && 
-                            <DividerLine color={color}/>
+                            <DividerLine/>
                             }  
                             {selProj}
                             <ScrollToTop/>
@@ -109,7 +108,7 @@ function App() {
 
 function DividerLine(props){
     return(
-        <div style={{backgroundColor:props.color}} className="dividerLine"></div> 
+        <div className="dividerLine"></div> 
     )
 }
 
@@ -158,17 +157,17 @@ function SelectOblate(props){
     let styles2;
 
     if(props.selectedProject === props.project){
-        styles = 'centerClass blur'
+        styles = 'blur'
        styles2={
-           color:'#FFFFFF'
+           color:'#000000'
        }
        }else{
            styles2={
-               color:'#FFFFFF'
+               color:'#000000'
            }
        }
     return(
-        <div  onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} style={{styles}} className="selectOblate selectors centerClass">
+        <div  onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+{styles}}>
         <p style={styles2}>{props.project}</p>
 </div>
     )
