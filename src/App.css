@@ -38,6 +38,7 @@
   border-radius: 100px;
   overflow: visible;
   top: 0;  
+  transition: 150ms;
 }
 
 .selectOblate{
@@ -45,6 +46,7 @@
   height: 50px;
   border: 1pt solid black;
   border-radius: 100px;
+  transition: 150ms;
 }
 .selectBall:hover{
   color: white;
@@ -74,7 +76,7 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-
+  height: 20%;
   width: 80%;
   margin-left: 10%;
 }
@@ -83,6 +85,7 @@ td {
   border: 1px solid black;
   text-align: left;
   padding: 8px;
+  transition: 150ms;
 }
 
 video{
@@ -133,29 +136,34 @@ img, video{
 }
 
 .footer{
-  bottom: 0px;
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 20px;
 }
 .hoverPar{
   font-size: 200%;
+  transition: 150ms;
+  
 }
 .hoverPar:hover{
   margin-left: 25px;
+  filter: blur(0.2rem);
 }
 .right{
   font-size: 200%;
   float: right;
+  transition: 150ms;
 }
 
 .right:hover{
   margin-right: 25px;
+  filter: blur(0.2rem);
 }
 
 td:hover {background-color: #BFFE39;}
 
 .hoverTable:hover{
-  font-size: 200%;
+  font-size: 150%;
 }
 
 ::-webkit-scrollbar {
