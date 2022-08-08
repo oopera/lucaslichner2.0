@@ -50,9 +50,13 @@
   transition: 150ms;
 }
 .selectBall:hover{
-  color: white;
+  color: transparent;
   filter: blur(1rem);
   overflow: visible;
+}
+
+.selectBall:hover p{
+  opacity: 0;
 }
 .sticky{
   osition: -webkit-sticky;
