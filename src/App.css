@@ -39,6 +39,7 @@
   overflow: visible;
   top: 0;  
   transition: 150ms;
+  background-image: url('Images/blob.svg');
 }
 
 .selectOblate{
