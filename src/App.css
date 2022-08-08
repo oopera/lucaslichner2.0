@@ -165,10 +165,6 @@ img, video{
 
 td:hover {background-color: #BFFE39;}
 
-.hoverTable:hover{
-  font-size: 150%;
-}
-
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
