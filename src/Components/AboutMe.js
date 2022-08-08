@@ -14,10 +14,10 @@ export default function AboutMe(props){
                 <th>I do:</th>
             </tr>
             <tr onClick={() => setActive('web')}>
-                <td className="hoverTable">Web Development</td>
+                <td className="hoverTable"><p>Web Development</p></td>
             </tr>
             <tr onClick={() => setActive('ux')}>
-                <td className="hoverTable">UI&UX Design</td>
+                <td className="hoverTable"><p>UI&UX Design</p></td>
             </tr>
             <tr>
                 <td className="hoverTable">Illustrations</td>

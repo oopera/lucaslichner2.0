@@ -32,8 +32,8 @@
 .selectBall{
   width: 200px;
   height: 200px;
-  min-width: 100px;
   min-height: 200px;
+  min-width: 80px;
   max-width: 200px;
   border-radius: 100px;
   overflow: visible;
@@ -86,9 +86,11 @@ table {
   border-collapse: collapse;
   width: 80%;
   margin-left: 10%;
+  border-spacing: 0px;
 }
 
 td {
+  border-collapse:collapse;
   border-bottom: 1px solid black;
   text-align: left;
   padding: 8px;
@@ -108,6 +110,7 @@ video{
 .marginContainer{
   height: 100%;
 }
+
 
 img, video{
   display: block;
@@ -129,11 +132,9 @@ img, video{
 
 .sideScroll{
   overflow-x: visible;
-  margin-left: 10vw;
-  width: 80vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
-
   
 }
 
@@ -169,6 +170,16 @@ img, video{
 }
 
 td:hover {background-color: #BFFE39;}
+
+.hoverTable p:hover{
+  margin-left: 15px;
+  transition: 150ms;
+}
+
+.hoverTable p{
+  height: 100%;
+  transition: 150ms;
+}
 
 ::-webkit-scrollbar {
   width: 5px;
