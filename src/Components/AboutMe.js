@@ -34,11 +34,11 @@ export default function AboutMe(props){
                             <th>I know:</th>
                         </tr>
                         <tr>
-                            <td onClick={() => setActive(true)}>Web Development</td>
+                            <td className="hoverTable" onClick={() => setActive(true)}><p>Web Development</p></td>
                             <td>HTML CSS JS PHP SQL</td>
                         </tr>
                         <tr>
-                            <td onClick={() => setActive('ux')}>UI&UX Design</td>
+                            <td className="hoverTable" nClick={() => setActive('ux')}><p>UI&UX Design</p></td>
                             <td>MongoDB Express React.js Node.js</td>
                         </tr>
                         <tr>

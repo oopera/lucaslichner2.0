@@ -59,7 +59,7 @@
   opacity: 0;
 }
 .sticky{
-  osition: -webkit-sticky;
+  position: -webkit-sticky;
   position: sticky;
   left: 0;
 }
@@ -70,6 +70,12 @@
 .blur{
   backdrop-filter: blur(1.5rem);
   overflow: visible;
+}
+
+.lightblur{
+  filter: blur(0.2rem);
+  overflow: visible;
+  
 }
 
 .selectBall:hover p{

@@ -20,12 +20,13 @@ import Misato from './Images/Chars/Misato.png'
 import Snake from './Images/Chars/Snake.png'
 import Tatsumaki from './Images/Chars/Tatsumaki.png'
 import Tiger from './Images/Animals/Tiger.png'
-
+import Humpy from './Images/Poster/Humpy.jpg'
+import Lucas from './Images/Portraits/LUCAS.png'
 function App() {
-    const Frontend = {topic: 'FRONTEND', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
-    const UI = {topic: 'UI', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
-    const Illustration = {topic: 'ILLUSTRATIONS', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
-    const Graphics = {topic: 'GRAPHICS', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
+    const Frontend = {topic: 'Frontend', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
+    const UI = {topic: 'Ui', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
+    const Illustration = {topic: 'Illustrations', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
+    const Graphics = {topic: 'Graphics', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
 
     const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
     const Crowdies = {type: 'images',name: 'Crowdies', text: 'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns.', images: [CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}
@@ -36,8 +37,10 @@ function App() {
     const StandaloneGraphics = {type: 'images', name: 'Standalone Graphics', text: 'Some standalone Graphics, not tied to any Theme or goal.', images: [SCHMOUXWHITE]}
     const Characters = {type: 'images', name: 'Characters', text: 'Some Characters i have illustrated.', images: [Misato, Snake, Tatsumaki]}
     const Animals = {type: 'images', name: 'Animals', text: 'Some Animals i have illustrated.', images: [Tiger]}
-    
-    const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop, Covers, StandaloneGraphics, Characters, Animals]
+    const Posters = {type: 'images', name: 'Posters', text: 'Some Posters i have designed', images: [Humpy] }
+    const Portraits = {type: 'images', name: 'Portraits', text: 'Some Portraits i have painted', images: [Lucas]}
+
+    const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop, Covers, StandaloneGraphics, Characters, Animals, Posters, Portraits]
     const topics  = [Frontend, UI, Illustration, Graphics];
     const [selectedTopic, setSelectedTopic] = useState([])
     const [projects, setProjects] = useState([]);
@@ -152,11 +155,11 @@ function SelectBall(props){
 }
 
 function SelectOblate(props){
-    let styles;
+    let styles = "";
     let styles2;
 
     if(props.selectedProject === props.project){
-        styles = 'blur'
+        styles = 'lightblur'
        styles2={
            color:'#000000'
        }
@@ -166,7 +169,7 @@ function SelectOblate(props){
            }
        }
     return(
-        <div  onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+{styles}}>
+        <div  onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
         <p style={styles2}>{props.project}</p>
 </div>
     )
