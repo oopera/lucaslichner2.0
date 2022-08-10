@@ -28,9 +28,9 @@ function App() {
     const Illustration = {topic: 'Illustrations', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
     const Graphics = {topic: 'Graphics', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
 
-    const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was reduction of noise and visual pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
+    const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was limiting visual noise and pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
     const Crowdies = {type: 'images',name: 'Crowdies', text: 'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns.', images: [CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}
-    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de 1.0 - My first own Website. Retired due to it being hard to maintain, bad modularity, and no way to display UI work well.', link: 'https://lucaslichnertwopointo.netlify.app/', video: LLVideo}
+    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de 1.0 - My first own Website. Retired due to it being hard to maintain, having bad modularity, no real content management, and no way to display large work well.', link: 'https://lucaslichnertwopointo.netlify.app/', video: LLVideo}
     const ImageEditor = {type: 'videos', name: 'ImageEditor', text: 'Image Editor - A lightweight Image Editor with off-the-wall styling', link: 'https://lucaslichner-image-editor.netlify.app/', video: IEVideo}
     const MockWebshop = {type: 'videos', name: 'MockWebshop', text: 'Mock Webshop - built in React with fully functioning Product and User Management', link: 'https://lucaslichner-web2022.netlify.app/', video: MOCKVIDEO}
     const Covers = {type: 'mixed', name: 'Covers', text: 'A cover, Vinyl Design and Animation for a Song i made in 2021.', images: [SmallLotusBouquet], video: [SMALLLOTUSBOUQUET]}
