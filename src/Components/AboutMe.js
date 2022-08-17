@@ -7,9 +7,16 @@ export default function AboutMe(props){
     const [hyperActive, setHyperActive] = useState(false);
     return(
         <>
-        <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a>
+        {active === false && (
+
+
+            <div className="sideScroll"> <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me <div className='arrowDown'> </div> </a></div>
+          )}
         {active === true && (
+            <div>
+            <div className="sideScroll"> <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me <div className='arrowDown'> </div> </a></div>
         <table>
+            <tbody>
             <tr>
                 <th>I do:</th>
             </tr>
@@ -25,10 +32,14 @@ export default function AboutMe(props){
             <tr>
                 <td className="hoverTable">Graphics</td>
             </tr>
+            </tbody>
         </table>
+        </div>
         )}
                 {active === 'web' && (
+                    
                     <table>
+                        <tbody>
                         <tr>
                             <th>I do:</th>
                             <th>I know:</th>
@@ -38,7 +49,7 @@ export default function AboutMe(props){
                             <td>HTML CSS JS PHP SQL</td>
                         </tr>
                         <tr>
-                            <td className="hoverTable" nClick={() => setActive('ux')}><p>UI&UX Design</p></td>
+                            <td className="hoverTable" onClick={() => setActive('ux')}><p>UI&UX Design</p></td>
                             <td>MongoDB Express React.js Node.js</td>
                         </tr>
                         <tr>
@@ -49,10 +60,12 @@ export default function AboutMe(props){
                             <td>Graphics</td>
                             <td>A tiny bit of WebGL</td>
                         </tr>
+                        </tbody>
                     </table>
         )}
                {active === 'ux' && (
                        <table>
+                        <tbody>
                        <tr>
                            <th>I do:</th>
                            <th>I know:</th>
@@ -73,6 +86,7 @@ export default function AboutMe(props){
                            <td>Graphics</td>
                            <td>User centered Design</td>
                        </tr>
+                       </tbody>
                    </table>
                
                
@@ -83,6 +97,7 @@ export default function AboutMe(props){
                      {hyperActive !== false && (
                
                      <table>
+                        <tbody>
                      <tr>
                          <th>I am:</th>
                      </tr>
@@ -98,6 +113,7 @@ export default function AboutMe(props){
                      <tr>
                          <td className="hoverTable">Pretty rad. </td>
                      </tr>
+                     </tbody>
                  </table>
            
                      )}
