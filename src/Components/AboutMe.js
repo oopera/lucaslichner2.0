@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutMe(props){
     const [active, setActive] = useState(true);
-    const [hyperActive, setHyperActive] = useState(false);
+    const [hyperActive, setHyperActive] =  useState(false);
     return(
         <>
  <div className="sideScroll"> <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a></div>
