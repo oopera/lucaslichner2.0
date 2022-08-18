@@ -7,7 +7,7 @@ export default function AboutMe(props){
     const [hyperActive, setHyperActive] =  useState(false);
     return(
         <>
- <div className="sideScroll"> <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a></div>
+        <a className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a>
         {active === true && (
             <div>
            
