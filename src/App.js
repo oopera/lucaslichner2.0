@@ -127,9 +127,10 @@ function App() {
     const [inProp, setInProp] = useState(true);
     return (
                             <div className="marginContainer">
+                                
                                 <div>
                                 <a className="hoverPar sticky" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-                                <a className="right sticky" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
                             <DividerLine/>
 
@@ -155,6 +156,7 @@ function App() {
                             {selProj}
                             <ScrollToTop/>
                             <Footer/>
+                            
                             </div>
             )
 }

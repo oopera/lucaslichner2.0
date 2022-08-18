@@ -190,13 +190,15 @@ img, video{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 90vw;
+  margin-left: 4vw;
 
 }
 
 .sideScroll{
   overflow-x: visible;
-  width: 100vw;
+  width: 90vw;
+  margin-left: 4vw;
   display: flex;
   flex-direction: row;
   
@@ -232,8 +234,13 @@ img, video{
 .right{
   font-size: 200%;
   float: right;
-
+  margin-left: 1vw;
   transition: 150ms;
+  color: #555;
+}
+.right:hover{
+  color: black;
+  margin-right: 25px;
 }
 
 .arrowDown{
@@ -244,9 +251,13 @@ img, video{
   height: 20px;
 }
 
-.right:hover{
-  margin-right: 25px;
-  filter: blur(0.2rem);
+.backGroundStuff{
+  position: absolute;
+  margin-left: 10vw;
+  width: 82vw;
+  height: 97vh;
+  background-color: white;
+  z-index: -100;
 }
 
 td:hover {background-color: #BFFE39;}
