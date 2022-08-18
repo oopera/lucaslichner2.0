@@ -48,6 +48,7 @@ function App() {
     const [selectedTopic, setSelectedTopic] = useState('Ui')
     const [projects, setProjects] = useState(UI.projects);
     const [selectedProject, setSelectedProject] = useState('Kinvoize');
+    const [TransitionTrigger, setTransitionTrigger] = useState(false);
 
     useEffect(() => {
         console.log('WITH ' + String.fromCodePoint(0x2764) + ' FROM LUCAS')
@@ -55,7 +56,7 @@ function App() {
     const myRef = useRef(null)
 
     const balls =  topics.map((topic) => 
-        <SelectBall key={topic.name} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
+        <SelectBall setTransitionTrigger={setTransitionTrigger} key={topic.name} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
     )
 
     const oblates =  projects.map((project) => 
@@ -112,6 +113,14 @@ function App() {
     Cool Stuff to do: 
     Animted Blobs anstatt circles 
     REACT CSS ANINMATIONS 
+    
+      <CSSTransition 
+                                in={TransitionTrigger} 
+                                timeout={200} 
+                                classNames="alert"
+                                onEnter={() => setTransitionTrigger(false)}
+                                >
+           </CSSTransition>
     */ 
 
 
@@ -124,7 +133,7 @@ function App() {
                                 </div>
                             <DividerLine/>
 
-                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas Lichner</p>
+                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas<br></br> Lichner</p>
 
                             <DividerLine/>
                             <AboutMe
@@ -135,11 +144,11 @@ function App() {
                                 </div>
                             <DividerLine/>
                                 <p>{selectedTopic}</p>
-                                <CSSTransition in={selectedProject} timeout={200} classNames="my-node">
+                             
                                 <div className="centerClass sideScroll">
                                     {oblates}
                                 </div>
-                                    </CSSTransition>
+                             
                             {projects.length !== 0 && 
                             <DividerLine/>
                             }  
@@ -160,11 +169,12 @@ function ScrollToTop(){
     const aboutMe = document.getElementById('aboutMe');
     
     return(
-        <a className="hoverPar stickyStuff"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </a>
+        <a className="hoverPar"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </a>
     )
 }
 
 function SelectBall(props){
+
     let styles;
     let styles2;
     if(props.selectedTopic === props.topic.topic){
@@ -186,7 +196,8 @@ function SelectBall(props){
     function doStuff(){
         props.selectedTopic === props.topic.topic ? clearStuff() : props.setSelectedTopic(props.topic.topic); 
         props.selectedTopic === props.topic.topic ? props.setProjects([]) : props.setProjects(props.topic.projects)
-    }
+        props.setTransitionTrigger(true);
+        }
     
     return(
         <div style={{background: props.topic.color}}onClick={() => doStuff()} className={styles}>
