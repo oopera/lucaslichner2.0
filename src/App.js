@@ -1,5 +1,5 @@
-import './App.css';
-import {useRef, useState} from "react";
+import styles from './App.css';
+import {useEffect, useRef, useState, useCallback} from "react";
 import React from "react";
 import AboutMe from "./Components/AboutMe";
 import InvoiceMain from './Images/UI/InvoiceMain.jpg'
@@ -22,6 +22,9 @@ import Tatsumaki from './Images/Chars/Tatsumaki.png'
 import Tiger from './Images/Animals/Tiger.png'
 import Humpy from './Images/Poster/Humpy.jpg'
 import Lucas from './Images/Portraits/LUCAS.png'
+import {CSSTransition} from 'react-transition-group'; // ES6
+
+
 function App() {
     const Frontend = {topic: 'Frontend', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
     const UI = {topic: 'Ui', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
@@ -42,50 +45,96 @@ function App() {
 
     const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop, Covers, StandaloneGraphics, Characters, Animals, Posters, Portraits]
     const topics  = [Frontend, UI, Illustration, Graphics];
-    const [selectedTopic, setSelectedTopic] = useState([])
-    const [projects, setProjects] = useState([]);
-    const [selectedProject, setSelectedProject] = useState([]);
+    const [selectedTopic, setSelectedTopic] = useState('Ui')
+    const [projects, setProjects] = useState(UI.projects);
+    const [selectedProject, setSelectedProject] = useState('Kinvoize');
+    const [TransitionTrigger, setTransitionTrigger] = useState(false);
 
+    useEffect(() => {
+        console.log('WITH ' + String.fromCodePoint(0x2764) + ' FROM LUCAS')
+    },[]);
     const myRef = useRef(null)
 
     const balls =  topics.map((topic) => 
-        <SelectBall setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
+        <SelectBall setTransitionTrigger={setTransitionTrigger} key={topic.name} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
     )
 
     const oblates =  projects.map((project) => 
-        <SelectOblate   selectedProject={selectedProject} executeScroll={executeScroll} setSelectedProject={setSelectedProject} project={project} />
+        <SelectOblate  key={project.name} selectedProject={selectedProject} executeScroll={executeScroll} setSelectedProject={setSelectedProject} project={project} />
     ) 
    
-    console.log(selectedProject)
     
     const selProj = allProjects.map((project) => {
     if(project.type === 'images' && project.name === selectedProject){
-    return <div ref={myRef}>
+    return <div key={project.name} ref={myRef}>
         <ImageContent text={project.text} images={project.images}/>
     </div>
     }else if(project.type === 'videos' && project.name === selectedProject){
-    return    <div ref={myRef}>
+    return    <div key={project.name} ref={myRef}>
         <VideoContent link= {project.link} title={project.text} video={project.video}/>
     </div>  
     }else if(project.type === 'mixed' && project.name === selectedProject){
-    return    <div ref={myRef}>
+    return    <div key={project.name} ref={myRef}>
         <ImageContent text={project.text} images={project.images}/>
         <VideoContent link= {''} title={''} video={project.video}/>
         </div>
     }}
     )
-
+    
     function executeScroll(){
         setTimeout(() => {
         myRef.current.scrollIntoView({behavior: "smooth"})   
     }, 500)}
+    const konsti = document.getElementById('root')
+    const shtickies = Array.from(document.getElementsByClassName('stickyStuff'))
+    console.log(shtickies)
+    const [ypos, setYpos] = useState(konsti.scrollTop)
+    document.getElementById('root').addEventListener("scroll", function () {
+        myFunc();
+    }, false);
+    
+    function myFunc() {
+        if(konsti.scrollTop){
+            console.log('down')
+            setYpos(konsti.scrollTop)
+            shtickies.map((element) => {
+                element.classList.remove('sticky')
+            })
+        }else{
+            console.log('up')
+            setYpos(konsti.scrollTop)
+            shtickies.map((element) => {
+                element.classList.add('sticky')
+            })
+        }
+    }
 
+    /* 
+    Cool Stuff to do: 
+    Animted Blobs anstatt circles 
+    REACT CSS ANINMATIONS 
+    
+      <CSSTransition 
+                                in={TransitionTrigger} 
+                                timeout={200} 
+                                classNames="alert"
+                                onEnter={() => setTransitionTrigger(false)}
+                                >
+           </CSSTransition>
+    */ 
+
+
+    const [inProp, setInProp] = useState(true);
     return (
                             <div className="marginContainer">
-                                <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-                                <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <div>
+                                <a className="hoverPar sticky" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <a className="right sticky" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                </div>
                             <DividerLine/>
-                                <p style={{fontSize: '600%',   lineHeight: "0.8"}} id='aboutMe'>Lucas Lichner</p>
+
+                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas<br></br> Lichner</p>
+
                             <DividerLine/>
                             <AboutMe
                             />
@@ -95,9 +144,11 @@ function App() {
                                 </div>
                             <DividerLine/>
                                 <p>{selectedTopic}</p>
-                                    <div className="centerClass sideScroll">
-                                        {oblates }
-                                    </div>
+                             
+                                <div className="centerClass sideScroll">
+                                    {oblates}
+                                </div>
+                             
                             {projects.length !== 0 && 
                             <DividerLine/>
                             }  
@@ -123,6 +174,7 @@ function ScrollToTop(){
 }
 
 function SelectBall(props){
+
     let styles;
     let styles2;
     if(props.selectedTopic === props.topic.topic){
@@ -144,10 +196,11 @@ function SelectBall(props){
     function doStuff(){
         props.selectedTopic === props.topic.topic ? clearStuff() : props.setSelectedTopic(props.topic.topic); 
         props.selectedTopic === props.topic.topic ? props.setProjects([]) : props.setProjects(props.topic.projects)
-    }
+        props.setTransitionTrigger(true);
+        }
     
     return(
-        <div style={{background: props.topic.color}}onClick={() => doStuff()} className={styles}>
+        <div style={{background: props.topic.color}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
         </div>
 
