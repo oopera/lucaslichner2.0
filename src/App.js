@@ -54,7 +54,7 @@ function App() {
         console.log('WITH ' + String.fromCodePoint(0x2764) + ' FROM LUCAS')
     },[]);
     const myRef = useRef(null)
-
+    const otherRef = useRef(null)
     const balls =  topics.map((topic) => 
         <SelectBall setTransitionTrigger={setTransitionTrigger} key={topic.name} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
     )
@@ -137,7 +137,7 @@ function App() {
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
 
-                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
+                                <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
                              
                             <DividerLine/>
                             <AboutMe/>
@@ -158,7 +158,7 @@ function App() {
                             {selProj}
                 
                             <Footer/>
-                            <ScrollToTop/>
+                            <ScrollToTop reffy={otherRef} />
                             </div>
             )
 }
@@ -169,11 +169,11 @@ function DividerLine(){
     )
 }
 
-function ScrollToTop(){
-    const topName = document.getElementById('aboutMe');
+function ScrollToTop(props){
+    let topName = document.getElementById('topName');
     
     return(
-        <p className="bottomTing"  onClick={() => topName.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
+        <p className="bottomTing"  onClick={() => props.reffy.current.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
     )
 }
 
