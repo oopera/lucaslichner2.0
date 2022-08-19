@@ -68,7 +68,7 @@ body{
   top: 0;  
   transition: 150ms;
   animation: inflate 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  border: 1pt dashed black;
+  border: 1pt solid black;
 }
 
 .selectBall p{
@@ -152,6 +152,7 @@ body{
 
 .bloop{
   animation: rotate 10s infinite linear;
+  border: 1pt dashed black;
   overflow: visible;
 }
 
@@ -316,6 +317,7 @@ img, video{
   flex-direction: column;
   margin-right: 0;
   text-align: center;
+  z-index: 120;
 
 }
 #topContainer a{
