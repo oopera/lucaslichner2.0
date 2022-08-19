@@ -11,7 +11,7 @@ export default function AboutMe(props){
         {active === true && (
             <div>
            
-        <table>
+        <table border="1" cellpadding="0" cellspacing="0">
             <tbody>
             <tr>
                 <th>I do:</th>
@@ -34,7 +34,7 @@ export default function AboutMe(props){
         )}
                 {active === 'web' && (
                     
-                    <table>
+                    <table border="1" cellpadding="0" cellspacing="0">
                         <tbody>
                         <tr>
                             <th>I do:</th>
@@ -60,7 +60,7 @@ export default function AboutMe(props){
                     </table>
         )}
                {active === 'ux' && (
-                       <table>
+                       <table border="1" cellpadding="0" cellspacing="0">
                         <tbody>
                        <tr>
                            <th>I do:</th>
@@ -92,7 +92,7 @@ export default function AboutMe(props){
                )}
                      {hyperActive !== false && (
                
-                     <table>
+                     <table border="1" cellpadding="0" cellspacing="0">
                         <tbody>
                      <tr>
                          <th>I am:</th>

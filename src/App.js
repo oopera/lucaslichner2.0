@@ -27,7 +27,7 @@ import {CSSTransition} from 'react-transition-group'; // ES6
 
 function App() {
     const Frontend = {topic: 'Frontend', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
-    const UI = {topic: 'Ui', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
+    const UI = {topic: 'UI', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
     const Illustration = {topic: 'Illustrations', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
     const Graphics = {topic: 'Graphics', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
 
@@ -45,7 +45,7 @@ function App() {
 
     const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop, Covers, StandaloneGraphics, Characters, Animals, Posters, Portraits]
     const topics  = [Frontend, UI, Illustration, Graphics];
-    const [selectedTopic, setSelectedTopic] = useState('Ui')
+    const [selectedTopic, setSelectedTopic] = useState('UI')
     const [projects, setProjects] = useState(UI.projects);
     const [selectedProject, setSelectedProject] = useState('Kinvoize');
     const [TransitionTrigger, setTransitionTrigger] = useState(false);
@@ -68,15 +68,18 @@ function App() {
     if(project.type === 'images' && project.name === selectedProject){
     return <div key={project.name} ref={myRef}>
         <ImageContent text={project.text} images={project.images}/>
+
     </div>
     }else if(project.type === 'videos' && project.name === selectedProject){
     return    <div key={project.name} ref={myRef}>
         <VideoContent link= {project.link} title={project.text} video={project.video}/>
+
     </div>  
     }else if(project.type === 'mixed' && project.name === selectedProject){
     return    <div key={project.name} ref={myRef}>
         <ImageContent text={project.text} images={project.images}/>
         <VideoContent link= {''} title={''} video={project.video}/>
+
         </div>
     }}
     )
@@ -121,21 +124,21 @@ function App() {
                                 onEnter={() => setTransitionTrigger(false)}
                                 >
            </CSSTransition>
-    */ 
+    */   
+
 
 
     const [inProp, setInProp] = useState(true);
     return (
                             <div className="marginContainer">
-                                
-                                <div>
-                                <a className="hoverPar sticky" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <div id='movertingiguess'/>
+                                   <div id='topContainer'>
+                                <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
-                            <DividerLine/>
 
                                 <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas<br></br> Lichner</p>
-
+                             
                             <DividerLine/>
                             <AboutMe
                             />
@@ -144,7 +147,7 @@ function App() {
                                     {balls}
                                 </div>
                             <DividerLine/>
-                                <p>{selectedTopic}</p>
+                   
                              
                                 <div className="centerClass sideScroll">
                                     {oblates}
@@ -154,14 +157,14 @@ function App() {
                             <DividerLine/>
                             }  
                             {selProj}
-                            <ScrollToTop/>
+                
                             <Footer/>
-                            
+                            <ScrollToTop/>
                             </div>
             )
 }
 
-function DividerLine(props){
+function DividerLine(){
     return(
         <div className="dividerLine"></div> 
     )
@@ -171,7 +174,7 @@ function ScrollToTop(){
     const aboutMe = document.getElementById('aboutMe');
     
     return(
-        <a className="hoverPar"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </a>
+        <p className="bottomTing hoverPar"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
     )
 }
 
@@ -180,9 +183,10 @@ function SelectBall(props){
     let styles;
     let styles2;
     if(props.selectedTopic === props.topic.topic){
-         styles = 'selectBall blur centerClass'
+         styles = 'selectBall bloop centerClass'
         styles2={
-            opacity:'0',
+            opacity:'1',
+            color:'#000000',
         }
         }else{
             styles = 'selectBall centerClass'
@@ -191,18 +195,15 @@ function SelectBall(props){
             }
         }
 
-    function clearStuff(){
-        props.setSelectedProject([])
-        props.setSelectedTopic([])
-    }
+
     function doStuff(){
-        props.selectedTopic === props.topic.topic ? clearStuff() : props.setSelectedTopic(props.topic.topic); 
-        props.selectedTopic === props.topic.topic ? props.setProjects([]) : props.setProjects(props.topic.projects)
+        props.setSelectedTopic(props.topic.topic); 
+        props.setProjects(props.topic.projects)
         props.setTransitionTrigger(true);
         }
     
     return(
-        <div style={{background: props.topic.color}}onClick={() => doStuff()} className={styles}>
+        <div style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,1) 70%)'}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
         </div>
 

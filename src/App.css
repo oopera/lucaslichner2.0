@@ -20,16 +20,30 @@
   border-bottom: 1pt solid black;
 }
 
+
+
 body{
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 10%, rgba(230,230,230,1) 90%, rgba(255,255,255,1) 100%);
   overflow-x: hidden;
+  cursor: crosshair;
+  animation: sheeesh 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes sheeesh{
+  0%{
+    overflow: hidden;
+  }
+
+  100%{
+    overflow: hidden;
+  }
 }
 
 #root{
   width: 100vw;
   height: fit-content;
   overflow-x: hidden;
-
+  
   
 }
 
@@ -54,6 +68,37 @@ body{
   top: 0;  
   transition: 150ms;
   animation: inflate 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: 1pt dashed black;
+}
+
+.selectBall p{
+  color: rgb(255, 255, 255);
+  transition: 50ms;
+}
+
+.selectBall:hover{
+  color: transparent;
+  overflow: visible;
+  filter:blur(4px);
+}
+
+@keyframes rotate{
+
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.selectBall:hover p{
+  z-index: 5;
+  color: white;
+  transition: 50ms;
 }
 
 @keyframes inflate{
@@ -63,6 +108,16 @@ body{
   100%{
     height: 100px;
   }
+}
+
+.bottomTing{
+
+  z-index: 100;
+  border: 1pt black dashed;
+  border-radius: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .alert-enter {
@@ -94,44 +149,51 @@ body{
   border-radius: 100px;
   transition: 150ms;
 }
-.selectBall:hover{
-  color: transparent;
-  filter: blur(1rem);
-  overflow: visible;
-}
 
-.selectBall:hover p{
-  opacity: 0;
-}
-.sticky{
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-}
-.stickierStuff{
-  position: fixed;
+.bloop{
+  animation: rotate 10s infinite linear;
+  overflow: visible;
 }
 
 .selectors:hover{
   filter: blur(0.5rem);
 }
 
-.blur{
-  backdrop-filter: blur(1.5rem);
-  overflow: visible;
+#movertingiguess{
+  position: absolute;
+  background-color: black;
+  height: 00vh;
+  width: 00vh;
+  margin: 0;
+  z-index: 100;
+  animation: letsSee 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes letsSee{
+  0%{
+    height: 100vh;
+    width: 100vw;
+  }
+  30%{
+    height: 50vh;
+    width: 100vw;
+  }
+  60%{
+    height: 100vh;
+    width: 50vw;
+  }
+  100%{
+    height: 00vh;
+    width: 00vw;
+  }
 }
 
 .lightblur{
-  filter: blur(0.2rem);
+  border: 1pt dashed black;
   overflow: visible;
   
 }
 
-.selectBall:hover p{
-  z-index: 5;
-  color: white;
-  
-}
 .stickyStuff{
   width: fit-content;
   height: fit-content;
@@ -151,10 +213,16 @@ table {
 
 td {
   border-collapse:collapse;
-  border-bottom: 1px solid black;
+  border-left: 1px dashed black;
+  border-spacing: 1px;
+  
   text-align: left;
   padding: 8px;
   transition: 150ms;
+}
+
+th{
+  font-style: italic;
 }
 
 video{
@@ -165,14 +233,24 @@ video{
 .marginContainer > * {
   margin-bottom: 1.5vh;
   margin-top: 1.5vh;
-  
 }
 
 .marginContainer{
   height: 100%;
-  width: 98%;
-  margin-left: 1vw;
+  padding-bottom: 50px;
   scroll-behavior: smooth;
+}
+
+#mouse-circle {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  border: 1px solid white;
+  border-radius: 50%;
+  pointer-events: none !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0);
+  mix-blend-mode: difference;
 }
 
 
@@ -210,10 +288,18 @@ img, video{
 }
 
 .footer{
-  width: 80%;
-  margin-left: 10%;
-  position: relative;
+  width: fit-content;
+  margin-left: 5%;
+  position: fixed;
   bottom: 0;
+  right: 0;
+  mix-blend-mode:difference;
+  background-color: #BFFE39
+
+}
+
+.footer:hover{
+  background-color: #4001c6
 }
 .hoverPar{
   font-size: 200%;
@@ -221,9 +307,27 @@ img, video{
   color: #555;
   
 }
+
+#topContainer{
+  margin-top: 0px;
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0;
+  text-align: center;
+
+}
+#topContainer a{
+  font-size: 25px;
+  border: 1pt solid black;
+  border-radius: 20px;
+}
+
 .hoverPar:hover{
   margin-left: 25px;
   color: black;
+  font-style: italic;
 }
 .hoverpar::before{
   content: linear-gradient(#e66465, #9198e5);
@@ -234,7 +338,6 @@ img, video{
 .right{
   font-size: 200%;
   float: right;
-  margin-left: 1vw;
   transition: 150ms;
   color: #555;
 }
@@ -275,6 +378,25 @@ td:hover {background-color: #BFFE39;}
 .absolute{
   position: fixed;
 
+}
+
+.scrolly{
+  border: black 1pt solid;
+  border-radius: 100%;
+  background-blend-mode:hue;
+  width: fit-content;
+  transition: 150ms
+}
+
+.scrolly:hover{
+  font-style: italic;
+  border-radius: 35%;
+  border: black 1pt dashed;
+  transform: rotate3d(1, 1, 1, 5deg);
+}
+
+a{
+  text-decoration:dashed;
 }
 
 ::-webkit-scrollbar {
