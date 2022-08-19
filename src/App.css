@@ -113,8 +113,25 @@ body{
 .bottomTing{
 
   z-index: 100;
-  border: 1pt black dashed;
+  border: 1pt black solid;
   border-radius: 100%;
+  bottom: 0;
+  height: 50px;
+  font-size: 25px;
+
+  width: 80vw;
+  margin-left: 10vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: 150ms;
+}
+
+.bottomTing:hover {
+  padding: 25px;
+  z-index: 100;
+  border: 1pt black dashed;
+  border-radius: 0%;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -220,6 +237,11 @@ td {
   text-align: left;
   padding: 8px;
   transition: 150ms;
+}
+
+.selTd{
+  background-color: #BFFE39;
+  mix-blend-mode: difference;
 }
 
 th{

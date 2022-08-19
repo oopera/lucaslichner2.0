@@ -174,7 +174,7 @@ function ScrollToTop(){
     const aboutMe = document.getElementById('aboutMe');
     
     return(
-        <p className="bottomTing hoverPar"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
+        <p className="bottomTing"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
     )
 }
 

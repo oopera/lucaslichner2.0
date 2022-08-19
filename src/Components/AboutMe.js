@@ -3,7 +3,7 @@ import React from "react";
 
 
 export default function AboutMe(props){
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState('ux');
     const [hyperActive, setHyperActive] =  useState(false);
     return(
         <>
@@ -20,7 +20,7 @@ export default function AboutMe(props){
                 <td className="hoverTable"><p>Web Development</p></td>
             </tr>
             <tr onClick={() => setActive('ux')}>
-                <td className="hoverTable"><p>UI&UX Design</p></td>
+                <td className="hoverTable"><p>User Experience Design</p></td>
             </tr>
             <tr>
                 <td className="hoverTable">Illustrations</td>
@@ -41,11 +41,11 @@ export default function AboutMe(props){
                             <th>I know:</th>
                         </tr>
                         <tr>
-                            <td className="hoverTable" onClick={() => setActive(true)}><p>Web Development</p></td>
+                            <td className="hoverTable selTd" onClick={() => setActive(true)}><p>Web Development</p></td>
                             <td>HTML CSS JS PHP SQL</td>
                         </tr>
                         <tr>
-                            <td className="hoverTable" onClick={() => setActive('ux')}><p>UI&UX Design</p></td>
+                            <td className="hoverTable" onClick={() => setActive('ux')}><p>User Experience Design</p></td>
                             <td>MongoDB Express React.js Node.js</td>
                         </tr>
                         <tr>
@@ -67,11 +67,11 @@ export default function AboutMe(props){
                            <th>I know:</th>
                        </tr>
                        <tr>
-                           <td onClick={() => setActive('web')} >Web Development</td>
+                           <td className="hoverTable" onClick={() => setActive('web')} ><p>Web Development</p></td>
                            <td>Figma, Axure</td>
                        </tr>
                        <tr>
-                           <td onClick={() => setActive(true)}>UI&UX Design</td>
+                           <td className="hoverTable selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
                            <td>Web&App Design</td>
                        </tr>
                        <tr>
