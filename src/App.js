@@ -126,12 +126,12 @@ function App() {
            </CSSTransition>
     */   
 
-
+           //<div id='movertingiguess'/>
 
     const [inProp, setInProp] = useState(true);
     return (
                             <div className="marginContainer">
-                                <div id='movertingiguess'/>
+                  
                                    <div id='topContainer'>
                                 <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
