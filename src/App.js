@@ -140,8 +140,7 @@ function App() {
                                 <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas<br></br> Lichner</p>
                              
                             <DividerLine/>
-                            <AboutMe
-                            />
+                            <AboutMe/>
                             <DividerLine/>
                                 <div className="centerClass sideScroll">
                                     {balls}
