@@ -32,91 +32,91 @@ export default function AboutMe(props){
         </table>
         </div>
         )}
-                {active === 'web' && (
-                    
-                    <table border="1" cellpadding="0" cellspacing="0">
-                        <tbody>
-                        <tr>
-                            <th>I do:</th>
-                            <th>I know:</th>
-                        </tr>
-                        <tr>
-                            <td className="hoverTable selTd" onClick={() => setActive(true)}><p>Web Development</p></td>
-                            <td>HTML CSS JS PHP SQL</td>
-                        </tr>
-                        <tr>
-                            <td className="hoverTable" onClick={() => setActive('ux')}><p>User Experience Design</p></td>
-                            <td>MongoDB Express React.js Node.js</td>
-                        </tr>
-                        <tr>
-                            <td>Illustrations</td>
-                            <td>Tailwind SCSS</td>
-                        </tr>
-                        <tr>
-                            <td>Graphics</td>
-                            <td>A tiny bit of WebGL</td>
-                        </tr>
-                        </tbody>
-                    </table>
+        {active === 'web' && (
+            
+            <table border="1" cellPadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <th>I do:</th>
+                    <th>I know:</th>
+                </tr>
+                <tr>
+                    <td className="hoverTable selTd" onClick={() => setActive(true)}><p>Web Development</p></td>
+                    <td>HTML CSS JS PHP SQL</td>
+                </tr>
+                <tr>
+                    <td className="hoverTable" onClick={() => setActive('ux')}><p>User Experience Design</p></td>
+                    <td>MongoDB Express React.js Node.js</td>
+                </tr>
+                <tr>
+                    <td>Illustrations</td>
+                    <td>Tailwind SCSS</td>
+                </tr>
+                <tr>
+                    <td>Graphics</td>
+                    <td>A tiny bit of WebGL</td>
+                </tr>
+                </tbody>
+            </table>
         )}
-               {active === 'ux' && (
-                       <table border="1" cellpadding="0" cellspacing="0">
-                        <tbody>
-                       <tr>
-                           <th>I do:</th>
-                           <th>I know:</th>
-                       </tr>
-                       <tr>
-                           <td className="hoverTable" onClick={() => setActive('web')} ><p>Web Development</p></td>
-                           <td>Figma, Axure</td>
-                       </tr>
-                       <tr>
-                           <td className="hoverTable selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
-                           <td>Web&App Design</td>
-                       </tr>
-                       <tr>
-                           <td>Illustrations</td>
-                           <td>Rapid Prototyping, User Research</td>
-                       </tr>
-                       <tr>
-                           <td>Graphics</td>
-                           <td>User centered Design</td>
-                       </tr>
-                       </tbody>
-                   </table>
-               
-               
-               )}
-               {active !== false && (
-                <a onClick={() => setHyperActive(!hyperActive)} className="hoverPar"> Want to know more?</a>
-               )}
-                     {hyperActive !== false && (
-               
-                     <table border="1" cellpadding="0" cellspacing="0">
-                        <tbody>
-                     <tr>
-                         <th>I am:</th>
-                     </tr>
-                     <tr>
-                         <td className="hoverTable">23 Years old</td>
-                     </tr>
-                     <tr>
-                         <td className="hoverTable">Currently doing my b.sc. in Human Computer Interaction @ HRW Bottrop</td>
-                     </tr>
-                     <tr>
-                         <td className="hoverTable">Currently working as a Shopify backend Developer</td>
-                     </tr>
-                     <tr>
-                         <td className="hoverTable">Pretty rad. </td>
-                     </tr>
-                     </tbody>
-                 </table>
-           
-                     )}
-                    {hyperActive !== false && (
-                        <a className="hoverPar margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
+        {active === 'ux' && (
+                <table border="1" cellPadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <th>I do:</th>
+                    <th>I know:</th>
+                </tr>
+                <tr>
+                    <td className="hoverTable" onClick={() => setActive('web')} ><p>Web Development</p></td>
+                    <td>Figma, Axure</td>
+                </tr>
+                <tr>
+                    <td className="hoverTable selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
+                    <td>Web&App Design</td>
+                </tr>
+                <tr>
+                    <td>Illustrations</td>
+                    <td>Rapid Prototyping, User Research</td>
+                </tr>
+                <tr>
+                    <td>Graphics</td>
+                    <td>User centered Design</td>
+                </tr>
+                </tbody>
+            </table>
         
-                        )}
+               
+               )}
+        {active !== false && (
+        <a onClick={() => setHyperActive(!hyperActive)} className="hoverPar"> Want to know more?</a>
+        )}
+                {hyperActive !== false && (
+        
+                <table border="1" cellPadding="0" cellspacing="0">
+                <tbody>
+                <tr>
+                    <th>I am:</th>
+                </tr>
+                <tr>
+                    <td className="hoverTable">23 Years old</td>
+                </tr>
+                <tr>
+                    <td className="hoverTable">Currently doing my b.sc. in Human Computer Interaction @ HRW Bottrop</td>
+                </tr>
+                <tr>
+                    <td className="hoverTable">Currently working as a Shopify backend Developer</td>
+                </tr>
+                <tr>
+                    <td className="hoverTable">Pretty rad. </td>
+                </tr>
+                </tbody>
+            </table>
+    
+                )}
+            {hyperActive !== false && (
+                <a className="hoverPar margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
+
+                )}
         </>
     )
 }

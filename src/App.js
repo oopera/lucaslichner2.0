@@ -90,7 +90,7 @@ function App() {
     }, 500)}
     const konsti = document.getElementById('root')
     const shtickies = Array.from(document.getElementsByClassName('stickyStuff'))
-    console.log(shtickies)
+
     const [ypos, setYpos] = useState(konsti.scrollTop)
     document.getElementById('root').addEventListener("scroll", function () {
         myFunc();
@@ -130,14 +130,14 @@ function App() {
 
     const [inProp, setInProp] = useState(true);
     return (
-                            <div className="marginContainer">
+                            <div id='iguess' className="marginContainer">
                   
-                                   <div id='topContainer'>
+                                <div id='topContainer'>
                                 <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
                                 <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
 
-                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}}  className='scrolly' id='aboutMe'>Lucas<br></br> Lichner</p>
+                                <p style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
                              
                             <DividerLine/>
                             <AboutMe/>
@@ -170,10 +170,10 @@ function DividerLine(){
 }
 
 function ScrollToTop(){
-    const aboutMe = document.getElementById('aboutMe');
+    const topName = document.getElementById('aboutMe');
     
     return(
-        <p className="bottomTing"  onClick={() => aboutMe.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
+        <p className="bottomTing"  onClick={() => topName.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
     )
 }
 

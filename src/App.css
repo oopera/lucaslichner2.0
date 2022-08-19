@@ -26,7 +26,7 @@ body{
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 10%, rgba(230,230,230,1) 90%, rgba(255,255,255,1) 100%);
   overflow-x: hidden;
   cursor: crosshair;
-  
+
 }
 
 @keyframes sheeesh{
@@ -258,6 +258,8 @@ video{
   margin-top: 1.5vh;
 }
 
+
+
 .marginContainer{
   height: 100%;
   padding-bottom: 50px;
@@ -296,19 +298,6 @@ img, video{
 
 }
 
-.sideScroll{
-  overflow-x: visible;
-  width: 90vw;
-  margin-left: 4vw;
-  display: flex;
-  flex-direction: row;
-  
-}
-
-.sideScroll > * {
-  margin-right: 10px;
-  
-}
 
 .footer{
   width: fit-content;
@@ -405,18 +394,22 @@ td:hover {background-color: #BFFE39;}
 }
 
 .scrolly{
-  border: black 1pt solid;
-  border-radius: 100%;
-  background-blend-mode:hue;
-  width: fit-content;
-  transition: 150ms
-}
-
-.scrolly:hover{
   font-style: italic;
   border-radius: 35%;
   border: black 1pt dashed;
   transform: rotate3d(1, 1, 1, 5deg);
+  width: fit-content;
+  transition: 150ms;
+}
+
+.scrolly:hover{
+  border: black 1pt solid;
+  border-radius: 100%;
+  background-blend-mode:hue;
+  font-style:normal;
+  transition: 150ms;
+  transform: rotate3d(1, 1, 1, 0deg);
+
 }
 
 a{
