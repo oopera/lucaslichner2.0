@@ -383,6 +383,10 @@ td:hover {background-color: #BFFE39;}
   transition: 150ms;
 }
 
+.skeleton{
+  background-color: black;
+}
+
 .hoverTable p{
   height: 100%;
   transition: 150ms;
