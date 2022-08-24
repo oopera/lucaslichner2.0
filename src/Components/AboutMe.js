@@ -8,6 +8,7 @@ export default function AboutMe(props){
     return(
         <>
         <a id="aboutMe" className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a>
+        <p> Ex-Chinese and Business Administration student interested in building positive, creative and enjoyable Interactions between technology and its user</p>
         {active === true && (
             <div>
            
