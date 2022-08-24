@@ -26,7 +26,7 @@ import {CSSTransition} from 'react-transition-group'; // ES6
 
 
 function App() {
-    const Frontend = {topic: 'Frontend', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
+    const Web = {topic: 'Web', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
     const UI = {topic: 'UI', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
     const Illustration = {topic: 'Illustrations', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
     const Graphics = {topic: 'Graphics', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
@@ -44,7 +44,7 @@ function App() {
     const Portraits = {type: 'images', name: 'Portraits', text: 'Some Portraits i have painted', images: [Lucas]}
 
     const allProjects = [Kinvoize, Crowdies, Lucaslichner, ImageEditor, MockWebshop, Covers, StandaloneGraphics, Characters, Animals, Posters, Portraits]
-    const topics  = [Frontend, UI, Illustration, Graphics];
+    const topics  = [Web, UI, Illustration, Graphics];
     const [selectedTopic, setSelectedTopic] = useState('UI')
     const [projects, setProjects] = useState(UI.projects);
     const [selectedProject, setSelectedProject] = useState('Kinvoize');
