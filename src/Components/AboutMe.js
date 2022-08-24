@@ -68,11 +68,11 @@ export default function AboutMe(props){
                 </tr>
                 <tr>
                     <td className="hoverTable" onClick={() => setActive('web')} ><p>Web Development</p></td>
-                    <td>Figma <3 </td>
+                    <td>User centered Design, Usability Engineering</td>
                 </tr>
                 <tr>
                     <td className="hoverTable selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
-                    <td>Human Factors & Ergonomics</td>
+                    <td>Human Factors, Ergonomics</td>
                 </tr>
                 <tr>
                     <td>Illustrations</td>
@@ -80,7 +80,7 @@ export default function AboutMe(props){
                 </tr>
                 <tr>
                     <td>Graphics</td>
-                    <td>User centered Design & Usability Engineering</td>
+                    <td>Figma, Adobe Suite </td>
                 </tr>
                 </tbody>
             </table>
