@@ -27,15 +27,15 @@ import {CSSTransition} from 'react-transition-group'; // ES6
 
 function App() {
     const Web = {topic: 'Web', projects: ['lucaslichner.de', 'MockWebshop', 'ImageEditor'], color:'#F3Fe39'};
-    const UI = {topic: 'UI', color:'black', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
-    const Illustration = {topic: 'Illustrations', color:'black', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
-    const Graphics = {topic: 'Graphics', color:'black', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
+    const UI = {topic: 'UI', projects: ['Kinvoize', 'Crowdies'], color:'#6DA8E2'}
+    const Illustration = {topic: 'Illustrations', projects: ['Characters', 'Animals', 'Portraits'], color:'#FF8F50'}
+    const Graphics = {topic: 'Graphics', projects: ['Covers', 'Posters', 'Standalone Graphics'], color:'#9FA5EF'}
 
     const Kinvoize = {type: 'images', name: 'Kinvoize', text: 'UI Prototype for a Banking Website. The goal was limiting visual noise and pollution.', images: [InvoiceMain, InvoiceSecondary, InvoiceTertiary]}
     const Crowdies = {type: 'images',name: 'Crowdies', text: 'UI Prototype for a Crowdfunding Website. The goal was a focus on individual donors, and effective rerouting to other Campaigns.', images: [CrowdiesMain, CrowdiesSecondary, CrowdiesTertiary]}
-    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de 1.0 - My first own Website. Retired due to it being hard to maintain, having bad modularity, no real content management, and no way to display large work well.', link: 'https://lucaslichnertwopointo.netlify.app/', video: LLVideo}
+    const Lucaslichner = {type: 'videos', name: 'lucaslichner.de', text: 'lucaslichner.de 1.0 - My first own Website. Retired due to it being hard to maintain, having bad modularity, no real content management, and no way to display large work well. Built in vanilla JS/CSS.', link: 'https://lucaslichnertwopointo.netlify.app/', video: LLVideo}
     const ImageEditor = {type: 'videos', name: 'ImageEditor', text: 'Image Editor - A lightweight Image Editor with off-the-wall styling', link: 'https://lucaslichner-image-editor.netlify.app/', video: IEVideo}
-    const MockWebshop = {type: 'videos', name: 'MockWebshop', text: 'Mock Webshop - built in React with fully functioning Product and User Management', link: 'https://lucaslichner-web2022.netlify.app/', video: MOCKVIDEO}
+    const MockWebshop = {type: 'videos', name: 'MockWebshop', text: 'Mock Webshop - built in on the MERN stack with fully functioning Product and User Management. ', link: 'https://lucaslichner-web2022.netlify.app/', video: MOCKVIDEO}
     const Covers = {type: 'mixed', name: 'Covers', text: 'A cover, Vinyl Design and Animation for a Song i made in 2021.', images: [SmallLotusBouquet], video: [SMALLLOTUSBOUQUET]}
     const StandaloneGraphics = {type: 'images', name: 'Standalone Graphics', text: 'Some standalone Graphics, not tied to any Theme or goal.', images: [SCHMOUXWHITE]}
     const Characters = {type: 'images', name: 'Characters', text: 'Some Characters i have illustrated.', images: [Misato, Snake, Tatsumaki]}
@@ -55,12 +55,12 @@ function App() {
     },[]);
     const myRef = useRef(null)
     const otherRef = useRef(null)
-    const balls =  topics.map((topic) => 
-        <SelectBall key={topic.name} setTransitionTrigger={setTransitionTrigger} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
+    const balls = topics.map((topic) => 
+        <SelectBall key={topic.topic} setTransitionTrigger={setTransitionTrigger} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
     )
 
-    const oblates =  projects.map((project) => 
-        <SelectOblate  key={project.name} selectedProject={selectedProject} executeScroll={executeScroll} setSelectedProject={setSelectedProject} project={project} />
+    const oblates = projects.map((project) => 
+        <SelectOblate key={project} selectedProject={selectedProject} executeScroll={executeScroll} setSelectedProject={setSelectedProject} project={project} />
     ) 
    
     
@@ -202,7 +202,7 @@ function SelectBall(props){
         }
     
     return(
-        <div key={props.key} style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,0) 70%)'}}onClick={() => doStuff()} className={styles}>
+        <div  style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,0) 70%)'}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
         </div>
 
@@ -224,7 +224,7 @@ function SelectOblate(props){
            }
        }
     return(
-        <div  key={props.key} onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
+        <div onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
         <p style={styles2}>{props.project}</p>
 </div>
     )
