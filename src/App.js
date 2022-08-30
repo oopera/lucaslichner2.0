@@ -56,7 +56,7 @@ function App() {
     const myRef = useRef(null)
     const otherRef = useRef(null)
     const balls =  topics.map((topic) => 
-        <SelectBall setTransitionTrigger={setTransitionTrigger} key={topic.name} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
+        <SelectBall key={topic.name} setTransitionTrigger={setTransitionTrigger} setProjects={setProjects} setSelectedProject={setSelectedProject} projects={projects} selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} topic={topic} />
     )
 
     const oblates =  projects.map((project) => 
@@ -133,8 +133,8 @@ function App() {
                             <div id='iguess' className="marginContainer">
                   
                                 <div id='topContainer'>
-                                <a className="hoverPar" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-                                <a className="right" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <a className="hoverPar " id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <a className="right linkButton" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
 
                                 <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
@@ -202,7 +202,7 @@ function SelectBall(props){
         }
     
     return(
-        <div style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,1) 70%)'}}onClick={() => doStuff()} className={styles}>
+        <div key={props.key} style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,1) 70%)'}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
         </div>
 
@@ -224,7 +224,7 @@ function SelectOblate(props){
            }
        }
     return(
-        <div  onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
+        <div  key={props.key} onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
         <p style={styles2}>{props.project}</p>
 </div>
     )

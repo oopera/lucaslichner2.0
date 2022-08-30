@@ -15,7 +15,7 @@ export function ImageContent(props){
 export function VideoContent(props){
     return(
         <div>
-             <a href = {props.link} target="_blank2">{props.title}</a>
+             <a href = {props.link} className="sticky" target="_blank2">{props.title}</a>
              <video ref={props.ref} muted='muted' autoplay='autoPlay' name="Video Name">
              <source src={props.video}/>
              </video>
