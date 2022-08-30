@@ -7,7 +7,7 @@ export default function AboutMe(props){
     const [hyperActive, setHyperActive] =  useState(false);
     return(
         <>
-        <a id="text--aboutme" className="hoverPar" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a>
+        <a id="text--aboutme" className="text--hover" onClick={() => {setActive(!active); setHyperActive(false)}}> About me </a>
         {active === true && (
             <div>
            
@@ -88,7 +88,7 @@ export default function AboutMe(props){
                
                )}
         {active !== false && (
-        <a onClick={() => setHyperActive(!hyperActive)} className="hoverPar"> Want to know more?</a>
+        <a onClick={() => setHyperActive(!hyperActive)} className="text--hover"> Want to know more?</a>
         )}
                 {hyperActive !== false && (
         
@@ -114,7 +114,7 @@ export default function AboutMe(props){
     
                 )}
             {hyperActive !== false && (
-                <a className="hoverPar margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
+                <a className="text--hover--paragraph margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
 
                 )}
         </>

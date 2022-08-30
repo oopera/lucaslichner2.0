@@ -133,22 +133,23 @@ function App() {
                             <div className="container--margin">
             
                                 <div id='container--topnav'>
-                                <a className="hoverPar button--link" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <a className="text--hover button--link" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
                                 <a className="right button--margin button--link" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
-
+                                <div className='row'>
                                 <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='text--name' className='text--scroll'>Lucas<br></br> Lichner</p>
-                             
+  
+                                </div>
                             <DividerLine/>
                             <AboutMe/>
                             <DividerLine/>
-                                <div className="centerClass sideScroll">
+                                <div className="center row">
                                     {balls}
                                 </div>
                             <DividerLine/>
                    
                              
-                                <div className="centerClass sideScroll">
+                                <div className="center row">
                                     {oblates}
                                 </div>
                              
@@ -173,7 +174,7 @@ function ScrollToTop(props){
     let topName = document.getElementById('text--name');
     
     return(
-        <p className="bottomTing"  onClick={() => props.reffy.current.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
+        <p className="button--toTop"  onClick={() => props.reffy.current.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>
     )
 }
 
@@ -182,13 +183,13 @@ function SelectBall(props){
     let styles;
     let styles2;
     if(props.selectedTopic === props.topic.topic){
-         styles = 'selectBall bloop centerClass'
+         styles = 'selector--round rotate center'
         styles2={
             opacity:'1',
             color:'#000000',
         }
         }else{
-            styles = 'selectBall centerClass'
+            styles = 'selector--round center'
             styles2={
                 color:'#000000',
             }
@@ -224,8 +225,8 @@ function SelectOblate(props){
            }
        }
     return(
-        <div onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selectOblate selectors centerClass "+ styles}>
-        <p style={styles2}>{props.project}</p>
+        <div onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selector-oblate selectors center "+ styles}>
+        <p>{props.project}</p>
 </div>
     )
 }
