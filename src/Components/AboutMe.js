@@ -17,16 +17,16 @@ export default function AboutMe(props){
                 <th>I do:</th>
             </tr>
             <tr onClick={() => setActive('web')}>
-                <td className="hoverTable"><p>Web Development</p></td>
+                <td className="table--hover"><p>Web Development</p></td>
             </tr>
             <tr onClick={() => setActive('ux')}>
-                <td className="hoverTable"><p>User Experience Design</p></td>
+                <td className="table--hover"><p>User Experience Design</p></td>
             </tr>
             <tr>
-                <td className="hoverTable">Illustrations</td>
+                <td className="table--hover">Illustrations</td>
             </tr>
             <tr>
-                <td className="hoverTable">Graphics</td>
+                <td className="table--hover">Graphics</td>
             </tr>
             </tbody>
         </table>
@@ -41,11 +41,11 @@ export default function AboutMe(props){
                     <th>I know:</th>
                 </tr>
                 <tr>
-                    <td className="hoverTable selTd" onClick={() => setActive(true)}><p>Web Development</p></td>
+                    <td className="table--hover selTd" onClick={() => setActive(true)}><p>Web Development</p></td>
                     <td>HTML CSS JS PHP SQL</td>
                 </tr>
                 <tr>
-                    <td className="hoverTable" onClick={() => setActive('ux')}><p>User Experience Design</p></td>
+                    <td className="table--hover" onClick={() => setActive('ux')}><p>User Experience Design</p></td>
                     <td>MongoDB Express React.js Node.js</td>
                 </tr>
                 <tr>
@@ -67,11 +67,11 @@ export default function AboutMe(props){
                     <th>I know:</th>
                 </tr>
                 <tr>
-                    <td className="hoverTable" onClick={() => setActive('web')} ><p>Web Development</p></td>
+                    <td className="table--hover" onClick={() => setActive('web')} ><p>Web Development</p></td>
                     <td>User centered Design, Usability Engineering</td>
                 </tr>
                 <tr>
-                    <td className="hoverTable selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
+                    <td className="table--hover selTd" onClick={() => setActive(true)}><p>User Experience Design</p></td>
                     <td>Human Factors, Ergonomics</td>
                 </tr>
                 <tr>
@@ -98,16 +98,16 @@ export default function AboutMe(props){
                     <th>I am:</th>
                 </tr>
                 <tr>
-                    <td className="hoverTable">23 Years old</td>
+                    <td className="table--hover">23 Years old</td>
                 </tr>
                 <tr>
-                    <td className="hoverTable">Currently doing my b.sc. in Human Computer Interaction @ HRW Bottrop</td>
+                    <td className="table--hover">Currently doing my b.sc. in Human Computer Interaction @ HRW Bottrop</td>
                 </tr>
                 <tr>
-                    <td className="hoverTable">Currently working as a Shopify backend Developer</td>
+                    <td className="table--hover">Currently working as a Shopify backend Developer</td>
                 </tr>
                 <tr>
-                    <td className="hoverTable">Pretty rad. </td>
+                    <td className="table--hover">Pretty rad. </td>
                 </tr>
                 </tbody>
             </table>
