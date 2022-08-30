@@ -127,14 +127,14 @@ function App() {
     */   
 
            //<div id='movertingiguess'/>
-
+         //  <div className='loader'/>
     const [inProp, setInProp] = useState(true);
     return (
                             <div id='iguess' className="marginContainer">
-                  
+            
                                 <div id='topContainer'>
-                                <a className="hoverPar " id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-                                <a className="right linkButton" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <a className="hoverPar grey" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <a className="right linkButton grey" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
 
                                 <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
@@ -202,7 +202,7 @@ function SelectBall(props){
         }
     
     return(
-        <div key={props.key} style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,1) 70%)'}}onClick={() => doStuff()} className={styles}>
+        <div key={props.key} style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,0) 70%)'}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
         </div>
 
