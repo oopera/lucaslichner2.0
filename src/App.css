@@ -391,7 +391,7 @@ img, video{
 
 td:hover {background-color: #BFFE39;}
 
-.hoverTable p:hover{
+.table--hover p:hover{
   margin-left: 15px;
   transition: 150ms;
 }
@@ -427,7 +427,7 @@ td:hover {background-color: #BFFE39;}
   background-color: black;
 }
 
-.hoverTable p{
+.table--hover p{
   height: 100%;
   transition: 150ms;
 }
