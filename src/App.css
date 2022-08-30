@@ -29,8 +29,7 @@ body{
 
 }
 .grey{
-  background: radial-gradient(circle, rgb(255, 255, 255) 1%,rgb(31, 255, 117, 0.5) 60%, rgb(255, 255, 255, 1) 80%);
-  color: white;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255,255,255) 10%, rgba(255,255,255) 90%, rgba(255,255,255) 100%);
 }
 
 @keyframes sheeesh{
