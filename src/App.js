@@ -130,14 +130,14 @@ function App() {
          //  <div className='loader'/>
     const [inProp, setInProp] = useState(true);
     return (
-                            <div id='iguess' className="marginContainer">
+                            <div className="container--margin">
             
-                                <div id='topContainer'>
-                                <a className="hoverPar grey" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
-                                <a className="right linkButton grey" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
+                                <div id='container--topnav'>
+                                <a className="hoverPar button--link" id='hbutton' href = "https://github.com/oopera.html" target="_blank"> GitHub </a>
+                                <a className="right button--margin button--link" id='hbutton' href = "https://www.linkedin.com/in/lucaslichner/" target="_blank2"> LinkedIn </a>    
                                 </div>
 
-                                <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='topName' className='scrolly'>Lucas<br></br> Lichner</p>
+                                <p ref={otherRef} style={{fontSize: '600%', marginLeft:'0px', whiteSpace: 'nowrap',  lineHeight: "0.8"}} id='text--name' className='text--scroll'>Lucas<br></br> Lichner</p>
                              
                             <DividerLine/>
                             <AboutMe/>
@@ -165,12 +165,12 @@ function App() {
 
 function DividerLine(){
     return(
-        <div className="dividerLine"></div> 
+        <div className="line--horizontal"></div> 
     )
 }
 
 function ScrollToTop(props){
-    let topName = document.getElementById('topName');
+    let topName = document.getElementById('text--name');
     
     return(
         <p className="bottomTing"  onClick={() => props.reffy.current.scrollIntoView({behavior: 'smooth'})}> Back to Top </p>

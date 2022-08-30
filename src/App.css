@@ -13,7 +13,7 @@
   src: url("ReciaSerifDisplay-Bold.ttf");
 }
 
-.dividerLine{
+.line--horizontal{
   width: 90vw;
   height: 1px;
   margin-left: 5vw;
@@ -28,8 +28,8 @@ body{
   cursor: crosshair;
 
 }
-.grey{
-  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255,255,255) 10%, rgba(255,255,255) 90%, rgba(255,255,255) 100%);
+.button--link{
+  color: white;
 }
 
 @keyframes sheeesh{
@@ -218,7 +218,7 @@ body{
 .sticky{
   font-size: 200%;
 }
-.linkButton{
+.button--margin{
   padding: 0px 5px 0px 5px;
 }
 .sticky a{
@@ -266,14 +266,14 @@ video{
   margin-left: 10%;
 }
 
-.marginContainer > * {
+.container--margin > * {
   margin-bottom: 1.5vh;
   margin-top: 1.5vh;
 }
 
 
 
-.marginContainer{
+.container--margin{
   height: 100%;
   padding-bottom: 50px;
   scroll-behavior: smooth;
@@ -333,7 +333,7 @@ img, video{
   
 }
 
-#topContainer{
+#container--topnav{
   margin-top: 0px;
   position: fixed;
   right: 0;
@@ -344,7 +344,7 @@ img, video{
   z-index: 120;
 
 }
-#topContainer a{
+#container--topnav a{
   font-size: 25px;
   border: 1pt solid black;
   border-radius: 20px;
@@ -437,7 +437,7 @@ td:hover {background-color: #BFFE39;}
 
 }
 
-.scrolly{
+.text--scroll{
   font-style: italic;
   border-radius: 35%;
   border: black 1pt dashed;
@@ -446,7 +446,7 @@ td:hover {background-color: #BFFE39;}
   transition: 150ms;
 }
 
-.scrolly:hover{
+.text--scroll:hover{
   border: black 1pt solid;
   border-radius: 100%;
   background-blend-mode:hue;
