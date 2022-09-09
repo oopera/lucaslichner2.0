@@ -114,7 +114,7 @@ export default function AboutMe(props){
     
                 )}
             {hyperActive !== false && (
-                <a className="text--hover--paragraph margin" href='https://lukislachsfarm.notion.site/lukislachsfarm/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
+                <a className="text--hover--paragraph margin" href='https://lichner.notion.site/lucaslichner-CV-94396266bb2c41968ddab1e4357ffa0e' target='_blank'> If you still want to know more, here's my CV.</a>
 
                 )}
         </>
