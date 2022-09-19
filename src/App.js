@@ -203,9 +203,9 @@ function SelectBall(props){
         }
     
     return(
-        <div  style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,0) 70%)'}}onClick={() => doStuff()} className={styles}>
+        <a style={{background: 'radial-gradient(circle,' + props.topic.color + ' 0%, rgba(230,230,230,0) 70%)'}}onClick={() => doStuff()} className={styles}>
             <p style={styles2}>{props.topic.topic}</p>
-        </div>
+        </a>
 
     )
 }
@@ -225,9 +225,9 @@ function SelectOblate(props){
            }
        }
     return(
-        <div onClick={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selector-oblate selectors center "+ styles}>
+        <a href={()=>{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selector-oblate selectors center "+ styles}>
         <p>{props.project}</p>
-</div>
+</a>
     )
 }
 
