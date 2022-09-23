@@ -225,7 +225,7 @@ function SelectOblate(props){
            }
        }
     return(
-        <div onClick={{props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selector-oblate selectors center "+ styles}>
+        <div onClick={() => {props.selectedProject === props.project ? props.setSelectedProject([]) : props.setSelectedProject(props.project); props.executeScroll()}} className={"selector-oblate selectors center "+ styles}>
         <p>{props.project}</p>
 </div>
     )
